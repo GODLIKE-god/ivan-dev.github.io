@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика: радиокнопки — Веб-тренажёр по UI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <main>
+        <article class="hero-card theory-card">
+
+            <nav class="mb-4">
+                <a href="3.html" class="btn btn-outline-light btn-sm">
+                    <i class="bi bi-arrow-left"></i> К предыдущему заданию
+                </a>
+            </nav>
+
+            <h1 class="text-center mb-4">
+                <i class="bi bi-ui-radios"></i> Радиокнопки (radio buttons)
+            </h1>
+
+            <!-- Краткая теория -->
+            <h2 class="h4">Что это такое?</h2>
+            <p><strong>Радиокнопка</strong> — это элемент формы, который позволяет выбрать <strong>только один вариант из нескольких</strong>. В отличие от флажков (checkbox), где можно отметить сразу несколько пунктов, радиокнопки работают как переключатель: выбрал один — остальные автоматически снимаются.</p>
+
+            <h2 class="h4 mt-4">Когда использовать?</h2>
+            <ul class="theory-list">
+                <li>✅ Нужно выбрать <strong>один вариант</strong> из списка (пол, способ доставки, тарифный план).</li>
+                <li>✅ Все варианты <strong>взаимоисключающие</strong> — нельзя выбрать два одновременно.</li>
+                <li>✅ Вариантов немного (2–7) — если их больше, лучше использовать выпадающий список <code>&lt;select&gt;</code>.</li>
+                <li>🚫 Не используйте одну радиокнопку — это бессмысленно, ведь выбор всегда один.</li>
+            </ul>
+
+            <div class="demo-block">
+                <p class="mb-2"><strong>Пример:</strong> выбор способа оплаты</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="demoPayment" id="demo1" checked>
+                    <label class="form-check-label" for="demo1">Банковская карта</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="demoPayment" id="demo2">
+                    <label class="form-check-label" for="demo2">Электронный кошелёк</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="demoPayment" id="demo3">
+                    <label class="form-check-label" for="demo3">Наличные при получении</label>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <!-- Задание -->
+            <h1 class="text-center mb-4">
+                <i class="bi bi-patch-question"></i> Задание
+            </h1>
+
+            <p>Представьте, что вы проектируете интерфейс интернет-магазина. Пользователю нужно выбрать <strong>способ доставки</strong>. Какой UI-элемент уместнее всего использовать в этом случае?</p>
+
+            <form id="quizForm" class="demo-block">
+                <div class="form-check mb-3">
+                    <input class="form-check-input quiz-radio" type="radio" name="quiz" id="q1" value="wrong">
+                    <label class="form-check-label" for="q1">
+                        <strong>Флажки (checkbox)</strong> — пользователь отмечает несколько вариантов.
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input quiz-radio" type="radio" name="quiz" id="q2" value="correct">
+                    <label class="form-check-label" for="q2">
+                        <strong>Радиокнопки (radio)</strong> — пользователь выбирает ровно один вариант.
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input quiz-radio" type="radio" name="quiz" id="q3" value="wrong">
+                    <label class="form-check-label" for="q3">
+                        <strong>Текстовое поле</strong> — пользователь вводит способ вручную.
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input quiz-radio" type="radio" name="quiz" id="q4" value="wrong">
+                    <label class="form-check-label" for="q4">
+                        <strong>Кнопка «Отправить»</strong> — она сама подберёт вариант за пользователя.
+                    </label>
+                </div>
+            </form>
+
+            <div id="statusMessage" class="status-message" role="status" aria-live="polite"></div>
+
+            <!-- Блок перехода на 5.html (появляется после правильного ответа) -->
+            <div id="nextStep" class="next-step-box" style="display: none;">
+                <div class="next-step-icon">
+                    <i class="bi bi-unlock-fill"></i>
+                </div>
+                <h3 class="next-step-title">Уровень пройден!</h3>
+                <p class="next-step-text">Теперь вы знаете, как работают радиокнопки. Пора освоить текстовые поля и валидацию.</p>
+                <a href="5.html" class="btn-next-level">
+                    <span>Открыть следующий уровень</span>
+                    <i class="bi bi-arrow-right-circle-fill"></i>
+                </a>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="index.html" class="btn btn-outline-light btn-sm">
+                    <i class="bi bi-house"></i> Вернуться на главную
+                </a>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <a href="index.html"><i class="bi bi-house"></i>На главную</a>
+    </footer>
+
+    <script>
+        const radios = document.querySelectorAll('.quiz-radio');
+        const statusEl = document.getElementById('statusMessage');
+        const nextStep = document.getElementById('nextStep');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.value === 'correct') {
+                    statusEl.textContent = '🎉 Верно! Радиокнопки — идеальный выбор для одного варианта из нескольких.';
+                    statusEl.className = 'status-message success';
+
+                    // Показываем блок перехода с анимацией
+                    nextStep.style.display = 'block';
+                    nextStep.classList.remove('show');
+                    // небольшая задержка для перезапуска анимации
+                    void nextStep.offsetWidth;
+                    nextStep.classList.add('show');
+
+                    // Прокручиваем к блоку перехода
+                    setTimeout(() => {
+                        nextStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 200);
+                } else {
+                    statusEl.textContent = '❌ Не совсем. Подумайте: пользователь ведь может выбрать только один способ доставки...';
+                    statusEl.className = 'status-message wrong-msg';
+                    nextStep.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+        (function () {
+            const savedTheme = localStorage.getItem('ui-trainer-theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
+</body>
+</html>
